@@ -178,7 +178,7 @@
       \else\typeout{No committee chair.}
       \fi\fi\fi
    \end {center}
-   \vfill
+   \vskip 48 pt
    \begin {center}
       University of California, Los Angeles \\ \@degreeyear
    \end {center}

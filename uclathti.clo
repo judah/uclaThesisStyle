@@ -155,8 +155,6 @@
 
 \newcommand\@makesignaturepage{
    \ColumnSave
-   \pagenumbering{roman}
-   \setcounter{page}{2}
    \noindent
    \renewcommand\baselinestretch{\@doublespacing}\@normalsize
    \normalsize \normalfont The \@thesisname\ of \@author\ is approved.
@@ -447,9 +445,11 @@
 % you may wish something less.
 %
 \newcommand{\@makeabstractpage}[1]{
+   \pagenumbering{roman}
    \if@abstract
       \ColumnSave
       \par\pagestyle{plain}
+      \setcounter{page}{2}
       \begin{center}
          \textsc{\large Abstract of the \@Thesisname}\\[12pt]
          \textbf{\@titlesize \@title}\\[12pt]
@@ -514,6 +514,7 @@
     \pagebreak   % the back side of the title page
   \fi
   \@makecopyrightpage
+  \@makeabstractpage{\@doublespacing}
   \@makesignaturepage
   \@makededication
   \tableofcontents
@@ -521,6 +522,5 @@
   \listoftables
   \@makeacknowledgments
   \@makevitapage
-  \@makeabstractpage{\@doublespacing}
   \newpage \pagenumbering{arabic}
 }

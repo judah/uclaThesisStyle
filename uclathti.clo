@@ -146,14 +146,12 @@
    \addtocounter{members}{1}
 }
 
-% The following definition for "\@signatureline" draws a line and puts
-% a name underneath the line.  If the standard "single" line spacing is
-% changed, it may be desirable to change the "\vskip" before the name.
+% Originally, \@signatureline drew a line for the committee member's
+% physical signature.
+% Since Grad Div does everything on line now,
+% the signature page is much simpler and just lists the committee's names.
 
-\newcommand\@signatureline[1]{
-   \rule{4in}{0.01in} \\ \vskip-10pt{#1} \\
-   \vskip 36pt plus0pt minus15pt%
-}
+\newcommand\@signatureline[1]{#1\\}
 
 \newcommand\@makesignaturepage{
    \ColumnSave
@@ -162,8 +160,7 @@
    \noindent
    \renewcommand\baselinestretch{\@doublespacing}\@normalsize
    \normalsize \normalfont The \@thesisname\ of \@author\ is approved.
-   \vskip 72pt plus0pt minus24pt
-   \begin {flushright}
+   \begin{center}
       \ifnum\c@members>5 \@signatureline{\@memberF}\fi
       \ifnum\c@members>4 \@signatureline{\@memberE}\fi
       \ifnum\c@members>3 \@signatureline{\@memberD}\fi
@@ -182,7 +179,7 @@
          \@signatureline{\@chairA, Committee Chair}
       \else\typeout{No committee chair.}
       \fi\fi\fi
-   \end {flushright}
+   \end {center}
    \vfill
    \begin {center}
       University of California, Los Angeles \\ \@degreeyear

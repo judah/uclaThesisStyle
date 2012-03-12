@@ -17,6 +17,14 @@
 \ProvidesFile{uclath12.clo}[\uclathxiidate, \uclathxiiversion]
 
 
+% Explicitly set the page size, for those unlucky souls whose system
+% is set to a4 paper.
+% This will only work for "direct-to-pdf" pdflatex invocation, though.
+\ifx\pdfoutput\undefined\else
+    \pdfpagewidth8.5in
+    \pdfpageheight11in
+\fi
+
 \lineskip 1pt            % \lineskip is 1pt for all font sizes.
 \normallineskip 1pt
 \renewcommand\baselinestretch{\@spacing}  % single or double spacing

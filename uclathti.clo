@@ -158,6 +158,8 @@
    \noindent
    \renewcommand\baselinestretch{\@doublespacing}\@normalsize
    \normalsize \normalfont The \@thesisname\ of \@author\ is approved.
+   \vskip 18pt plus0pt minus18pt
+
    \begin{center}
       \ifnum\c@members>5 \@signatureline{\@memberF}\fi
       \ifnum\c@members>4 \@signatureline{\@memberE}\fi
@@ -445,11 +447,9 @@
 % you may wish something less.
 %
 \newcommand{\@makeabstractpage}[1]{
-   \pagenumbering{roman}
    \if@abstract
       \ColumnSave
       \par\pagestyle{plain}
-      \setcounter{page}{2}
       \begin{center}
          \textsc{\large Abstract of the \@Thesisname}\\[12pt]
          \textbf{\@titlesize \@title}\\[12pt]
@@ -514,6 +514,8 @@
     \pagebreak   % the back side of the title page
   \fi
   \@makecopyrightpage
+  \setcounter{page}{2}
+  \pagenumbering{roman}
   \@makeabstractpage{\@doublespacing}
   \@makesignaturepage
   \@makededication

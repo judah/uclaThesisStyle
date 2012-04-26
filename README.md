@@ -1,7 +1,7 @@
 
 uclathes.tar
 ------------
-1996/06/10, release 1.2
+2012/04/26, release 1.3
 
 
 WHAT IS UCLATHES?
@@ -10,15 +10,27 @@ WHAT IS UCLATHES?
 This package is a beta test version of a LaTeX2e document
 style to format UCLA dissertations and theses.
 This style is based on work from Leslie Lamport,
-Dorab Patel, Eduardo Krell, Richard B. Wales, and John Heidemann.
+Dorab Patel, Eduardo Krell, Richard B. Wales, John Heidemann, and Judah Jacobson.
 
-This version should be considered ``beta test'' because
-no thesis formatted with it has yet been submitted to the Thesis
-and Dissertations Advisor for approval.  Before you throw it away,
-several theses and dissertations have been approved based on an
-earlier version of this style package for LaTeX 2.09.  Degrees
-were granted, so don't lose all hope.
+We have had reports of people successfully submitting their theses
+using these templates (as of Spring 2012).  However, you are **strongly** encouraged to review
+the requirements yourself and to give yourself enough time when filing
+in case any problems come up.
 
+
+WHAT IS NEW WITH UCLATHES 1.3?
+-----------------------------
+
+The templates were updated to cover the new Grad Division requirements
+for electronic submission (as of March 2012).
+
+We also explicitly set the PDF page size to "letter" (8.5x11), since
+some tex installations have a different default.
+Note that this fix only works when calling `pdflatex` directly; for example,
+it  won't make a difference if you call `latex+dvips+ps2pdf` as separate steps.
+
+Finally, the list of table and list of figure pages
+are now included if (and only if) the document actually contains any table or figures, respectively.
 
 WHAT IS NEW WITH UCLATHES 1.2?
 ------------------------------
